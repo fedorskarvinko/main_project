@@ -21,6 +21,3 @@ def get_data(data: str) -> str:
     Функция преобразует дату из ГГГ-ММ-ДД в ДД-ММ-ГГГГ
     """
     return f"{data[8:10]}.{data[5:7]}.{data[0:4]}"
-
-
-print(mask_account_card("Visa Platinum 8990922113665229"))
