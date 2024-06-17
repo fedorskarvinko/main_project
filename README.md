@@ -15,5 +15,7 @@
 
 
 ## Команда проекта:
-* Скарвинко Федор - студент SkyPro
+* Скарвинко Федор - студент ![SkyPro](https://leader-id.storage.yandexcloud.net/upload/1250085/764fc5a8-d9c6-4ecd-8a83-2d0821f1c7e6.png)
+
+
 
