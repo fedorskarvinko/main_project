@@ -1,6 +1,5 @@
 import pytest
 
-
 from src.processing import filter_by_state, sort_by_date
 
 
@@ -35,8 +34,6 @@ from src.processing import filter_by_state, sort_by_date
         ),
     ],
 )
-
-
 def test_filter_by_state(dict_list, key_state, expected):
     assert filter_by_state(dict_list, key_state) == expected
 
