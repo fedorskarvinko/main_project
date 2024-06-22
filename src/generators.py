@@ -4,7 +4,7 @@ def filter_by_currency(transactions, currency):
     (или объект-генератор, который выдает по одной банковской операции)
      и возвращает итератор, который выдает по очереди операции,
      в которых указана заданная валюта.
-     """
+    """
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
@@ -12,8 +12,8 @@ def filter_by_currency(transactions, currency):
 
 def transaction_descriptions(transactions):
     """
-      Генератор, который принимает список словарей с банковскими операциями
-      и возвращает описание каждой операции по очереди.
+    Генератор, который принимает список словарей с банковскими операциями
+    и возвращает описание каждой операции по очереди.
     """
     for transaction in transactions:
         yield transaction["description"]
