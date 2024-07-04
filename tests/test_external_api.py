@@ -1,4 +1,5 @@
 import os
+from unittest.mock import patch
 
 import requests
 from dotenv import load_dotenv
@@ -23,3 +24,19 @@ def convert_transaction_amount(transaction):
             rate = response.json()["rates"][currency]
             amount = round(amount / rate, 2)
             return amount
+
+
+@patch("requests.request")
+def test_convert_transaction_amount(mock_requests):
+    mock_response = {"rates": {"USD": 1.15}}
+    mock_requests.return_value.status_code = 200
+    mock_requests.return_value.json.return_value = mock_response
+
+    transaction = {"amount": 100, "currency": "USD"}
+    assert convert_transaction_amount(transaction) == 86.96
+    mock_requests.assert_called_once_with(
+        "GET",
+        "https://api.apilayer.com/exchangerates_data/latest?symbols=usd%2C%20eur&base=rub",
+        headers={"apikey": API_KEY},
+        data={},
+    )
