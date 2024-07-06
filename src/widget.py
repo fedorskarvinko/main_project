@@ -13,7 +13,7 @@ def mask_account_card(account_card: str) -> str:
         mask_card = get_mask_card_number(int(parts[-1]))
         del parts[-1]
         name_card = " ".join(parts)
-        return f"{name_card} {mask_card} "
+        return f"{name_card} {mask_card}"
 
 
 def get_data(data: str) -> str:
