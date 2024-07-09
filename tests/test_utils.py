@@ -1,13 +1,5 @@
-import json
 from unittest.mock import mock_open, patch
-
-
-def read_transactions_from_json(file_path):
-    try:
-        with open(file_path, "r", encoding="utf-8") as file:
-            return json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
+from src.utils import read_transactions_from_json
 
 
 def test_read_transactions_from_json():
