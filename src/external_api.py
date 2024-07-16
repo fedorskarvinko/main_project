@@ -13,7 +13,7 @@ def convert_transaction_amount(transaction):
     currency = transaction["currency"]
     url = "https://api.apilayer.com/exchangerates_data/convert"
     payload = {}
-    headers = API_KEY
+    # headers = API_KEY
     if currency == "RUB":
         return float(amount)
     elif currency != "RUB":

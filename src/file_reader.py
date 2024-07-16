@@ -3,10 +3,10 @@ import csv
 import pandas as pd
 
 
-def read_transactions_csv_file():
+def read_transactions_csv_file(file_path):
     """Функция, которая считывает финансовые операции из CSV файлов"""
-    with open("C:/Users/fedor/Downloads/transactions.csv", 'r', encoding='utf-8') as file:
-        reader = csv.reader(file, delimiter=';')
+    with open(file_path, "r", encoding="utf-8") as file:
+        reader = csv.reader(file, delimiter=";")
         header = next(reader)
         result = []
         for row in reader:
@@ -30,9 +30,9 @@ def read_transactions_csv_file():
     return result
 
 
-def read_transactions_excel_file():
-    """Функция, которая считывает финансовые операции из EXEL файлов """
-    df = pd.read_excel('C:/Users/fedor/Downloads/transactions_excel.xlsx')  # читаем из экселя в DataFrame
+def read_transactions_excel_file(file_path):
+    """Функция, которая считывает финансовые операции из EXEL файлов"""
+    df = pd.read_excel(file_path)  # читаем из экселя в DataFrame
     result = []
     rows_count = len(df)
     for i in range(0, rows_count):
@@ -53,4 +53,3 @@ def read_transactions_excel_file():
         }
         result.append(row_dict)
     return result
-
