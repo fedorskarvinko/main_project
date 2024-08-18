@@ -42,7 +42,7 @@ if __name__ == "__main__":
         "Открытие вклада",
     ]
 
-print(sort_transactions(list_transactions, categories_operations))
-
-input_user = input("Введите слово для поиска: ")
-print(return_list_dicts_with_transaction(list_transactions, input_user))
+# print(sort_transactions(list_transactions, categories_operations))
+#
+# input_user = input("Введите слово для поиска: ")
+# print(return_list_dicts_with_transaction(list_transactions, input_user))

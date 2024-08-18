@@ -1,8 +1,13 @@
+import os
 import logging
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_DIR = os.path.join(BASE_DIR, '..', 'logs')
+os.makedirs(LOG_DIR, exist_ok=True)
 
 logger = logging.getLogger("masks")
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler("../logs/masks.log", mode="w", encoding="utf-8")
+file_handler = logging.FileHandler(os.path.join(LOG_DIR, "masks.log"), mode="w", encoding="utf-8")
 file_formater = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formater)
 logger.addHandler(file_handler)

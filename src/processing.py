@@ -5,9 +5,9 @@ def filter_by_state(dict_list: list, key_state: str = "EXECUTED") -> list:
     state содержит переданное в функцию значение.
     """
     filt_list = []
-    for i in range(len(dict_list)):
-        if dict_list[i]["state"] == key_state:
-            filt_list.append(dict_list[i])
+    for i in dict_list:
+        if i["state"] == key_state:
+            filt_list.append(i)
     return filt_list
 
 

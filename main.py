@@ -28,7 +28,9 @@ def main() -> None:
             break
         elif user_file_choice == "3":
             print("Выбран XLSX-файл.")
-            list_transactions = read_transactions_excel_file(os.path.join("../main_project/data/transactions_excel.xlsx"))
+            list_transactions = read_transactions_excel_file(os.path.join(
+                "../main_project/data/transactions_excel.xlsx"
+            ))
             break
         else:
             print("Некорректный выбор. Попробуй еще раз.")
