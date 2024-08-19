@@ -9,13 +9,13 @@ def log(filename: Any = None) -> Callable:
             try:
                 result = function(*args)
             except Exception as e:
-                if filename == None:
+                if filename is None:
                     return print(f"my_function error: {e}. Inputs: {args}\n")
                 else:
                     file = open(filename, "a")
                     file.write(f"my_function error: {e}. Inputs: {args}\n")
             else:
-                if filename == None:
+                if filename is None:
                     print("my_function ok\n")
                     return result
                 else:
