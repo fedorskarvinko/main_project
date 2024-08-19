@@ -20,15 +20,15 @@ def main() -> None:
         user_file_choice = input().strip()
         if user_file_choice == "1":
             print("Выбран JSON-файл.")
-            list_transactions = read_transactions_from_json(os.path.join("../main_project/data/operations.json"))
+            transactions = read_transactions_from_json(os.path.join("../main_project/data/operations.json"))
             break
         elif user_file_choice == "2":
             print("Выбран CSV-файл.")
-            list_transactions = read_transactions_csv_file(os.path.join("../main_project/data/transactions.csv"))
+            transactions = read_transactions_csv_file(os.path.join("../main_project/data/transactions.csv"))
             break
         elif user_file_choice == "3":
             print("Выбран XLSX-файл.")
-            list_transactions = read_transactions_excel_file(os.path.join(
+            transactions = read_transactions_excel_file(os.path.join(
                 "../main_project/data/transactions_excel.xlsx"
             ))
             break
@@ -93,7 +93,7 @@ def main() -> None:
             print("Некорректно выбрал. Пробуй еще раз.")
             continue
 
-    transactions = list_transactions
+    # transactions = list_transactions
     for filter_type, filter_value in list_transactions.items():
         if filter_type == "status":
             transactions = filter_by_state(transactions, filter_value)
